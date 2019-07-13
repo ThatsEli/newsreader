@@ -23,7 +23,6 @@ class HomeState extends State<Home> {
   Widget build(BuildContext context) {
     this._refreshArticles();
     return Scaffold(
-      backgroundColor: Color.fromRGBO(9, 10, 11, 1),
       body: Column(
         children: [
           Container(
@@ -50,8 +49,8 @@ class HomeState extends State<Home> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.event_note, color: Colors.white, size: 100),
-            Text('Loading...', style: TextStyle(color: Colors.white, fontSize: 30)
+            Icon(Icons.event_note, size: 100),
+            Text('Loading...', style: TextStyle(fontSize: 30)
             )
           ]
         ),

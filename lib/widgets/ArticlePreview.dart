@@ -9,8 +9,8 @@ class ArticlePreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final TextStyle _titleStyle = new TextStyle(color: Colors.white, fontSize: 20);
-    final TextStyle _infoStyle = new TextStyle(color: Color.fromRGBO(150, 150, 150, 1), fontSize: 15);
+    final TextStyle _titleStyle = new TextStyle(fontSize: 20);
+    final TextStyle _infoStyle = new TextStyle(fontSize: 15);
 
     return GestureDetector(
       onTap: () {
@@ -38,7 +38,7 @@ class ArticlePreview extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 8),
-            child: Divider(color: Colors.white,),
+            child: Divider(),
           )
           ],
       ),
