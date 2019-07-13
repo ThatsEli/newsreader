@@ -20,8 +20,12 @@ class HomeState extends State<Home> {
   List<Article> _articles = <Article>[];
 
   @override
-  Widget build(BuildContext context) {
+  void initState() {
     this._refreshArticles();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [

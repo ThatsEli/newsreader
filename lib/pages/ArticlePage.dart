@@ -20,12 +20,12 @@ class ArticleWidget extends StatelessWidget {
             scrollDirection: Axis.vertical,
               child: Column(
                 children: <Widget>[
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(8),
-                    child: Hero(
-                      tag: this.article.title + '_picture',
+                  Hero(
+                    tag: this.article.title + '_picture',
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(8),
                       child: this.article.pictureUrl != '' ? Image.network(this.article.pictureUrl) : Container()
-                    )
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 8.0),
