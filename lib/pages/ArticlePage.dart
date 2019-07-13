@@ -8,9 +8,9 @@ class ArticleWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle _contentTextStyle = new TextStyle(color: Colors.white, fontSize: 20);
     TextStyle _titleTextStyle = new TextStyle(color: Colors.white, fontSize: 30, fontWeight: FontWeight.w800);
     TextStyle _subHeaderTextStyle = new TextStyle(color: Color.fromRGBO(150, 150, 150, 1), fontSize: 15);
+    TextStyle _contentTextStyle = new TextStyle(color: Color.fromRGBO(220, 220, 220, 1), fontSize: 20);
 
     return Scaffold(
       body: Container(
@@ -25,7 +25,7 @@ class ArticleWidget extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     child: Hero(
                       tag: this.article.title + '_picture',
-                      child: Image.network(this.article.pictureUrl)
+                      child: this.article.pictureUrl != '' ? Image.network(this.article.pictureUrl) : Container()
                     )
                   ),
                   Padding(

@@ -22,7 +22,7 @@ class ArticlePreview extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             child: Hero(
               tag: this.article.title + '_picture',
-              child: Image.network(this.article.pictureUrl)
+              child: this.article.pictureUrl != '' ? Image.network(this.article.pictureUrl) : Container()
             )
           ),
           Padding(

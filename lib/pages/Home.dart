@@ -27,7 +27,7 @@ class HomeState extends State<Home> {
       body: Column(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height - 50,
+            height: MediaQuery.of(context).size.height,
             child: Padding(
               padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
                 child: _buildNewsFeed()
@@ -47,7 +47,14 @@ class HomeState extends State<Home> {
         },
       ) : Container(
         alignment: Alignment.center,
-        child: Text('Loading...', style: TextStyle(color: Colors.white, fontSize: 30)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.event_note, color: Colors.white, size: 100),
+            Text('Loading...', style: TextStyle(color: Colors.white, fontSize: 30)
+            )
+          ]
+        ),
       ),
       onRefresh: _refreshArticles
     );
