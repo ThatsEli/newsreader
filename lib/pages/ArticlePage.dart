@@ -15,7 +15,7 @@ class ArticleWidget extends StatelessWidget {
     return Scaffold(
       body: Container(
         child: Padding(
-          padding: EdgeInsets.only(top: 50, left: 8, right: 8),
+          padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
               child: Column(
@@ -24,7 +24,13 @@ class ArticleWidget extends StatelessWidget {
                     tag: this.article.title + '_picture',
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: this.article.pictureUrl != '' ? Image.network(this.article.pictureUrl) : Container()
+                      child: this.article.pictureUrl != '' ? Image.network(
+                        this.article.pictureUrl,
+                        height: MediaQuery.of(context).size.width * 0.56279,
+                        width: MediaQuery.of(context).size.width,
+                        alignment: Alignment.center,
+                        fit: BoxFit.cover,
+                      ) : Container()
                     ),
                   ),
                   Padding(

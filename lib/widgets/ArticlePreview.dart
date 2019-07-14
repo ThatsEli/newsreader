@@ -22,7 +22,13 @@ class ArticlePreview extends StatelessWidget {
             tag: this.article.title + '_picture',
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: this.article.pictureUrl != '' ? Image.network(this.article.pictureUrl) : Container()
+              child: this.article.pictureUrl != '' ? Image.network(
+                this.article.pictureUrl,
+                height: MediaQuery.of(context).size.width * 0.56279,
+                width: MediaQuery.of(context).size.width,
+                alignment: Alignment.center,
+                fit: BoxFit.cover,
+              ) : Container()
             ),
           ),
           Padding(
